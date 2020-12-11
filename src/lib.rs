@@ -2,6 +2,9 @@ use druid::{Color, Env, FontDescriptor};
 
 pub mod checkbox;
 pub mod theme;
+pub mod radio;
+pub mod switch;
+pub mod button;
 use theme::color;
 
 pub fn config_env(env: &mut Env) {

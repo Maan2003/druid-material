@@ -1,5 +1,9 @@
+use druid::widget::{CrossAxisAlignment, Flex, MainAxisAlignment};
 use druid::{AppLauncher, Widget, WidgetExt, WindowDesc};
+use druid_material::button::Button;
 use druid_material::checkbox::Checkbox;
+use druid_material::radio::Radio;
+use druid_material::switch::Switch;
 
 
 fn main() {
@@ -10,5 +14,11 @@ fn main() {
 }
 
 fn ui() -> impl Widget<bool> {
-    Checkbox::new("Some Checkbox").center()
+    Flex::column()
+        .with_child(Radio::new("Some Checkbox", true))
+        .with_child(Radio::new("Some Radio", false))
+        .with_spacer(20.0)
+        .with_child(Button::new("Btn"))
+        .cross_axis_alignment(CrossAxisAlignment::Start)
+        .padding(40.0)
 }
